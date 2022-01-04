@@ -14,15 +14,17 @@ public class CollectionOfEmployee {
         list.add(new EmployeeEntity(122,"Happy Rai","BackendDeveloper"));
         list.add(new EmployeeEntity(123,"Anupriya Singh","frontendDeveloper"));
     }
-    //getemployee
+    //get all employee data
 
     public static List<EmployeeEntity> getList() {
         return list;
     }
+    //get employee data by id
     public EmployeeEntity getEmployeeById(int id){
        EmployeeEntity emplo= list.stream().filter(e->e.getEmployeeId()==id).findFirst().get();
        return emplo;
     }
+    //post the employee data
     public void addEmployee(EmployeeEntity employee){
        list.add(employee);
 
@@ -36,5 +38,14 @@ public class CollectionOfEmployee {
                return false;
            }
        }).collect(Collectors.toList());
+    }
+    //update the data
+    public void updateData(EmployeeEntity emp,int id){
+        list.stream().map(b->{
+            if(b.getEmployeeId()==id){
+                b.setEmployeeName(emp.getEmployeeName());
+            }
+            return b;
+        }).collect(Collectors.toList());
     }
 }

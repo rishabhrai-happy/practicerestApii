@@ -29,4 +29,9 @@ public class MainController {
     public void delete(@PathVariable("id") int id){
        this.collectionOfEmployee.deleteData(id);
     }
+    @PutMapping("/employee/{id}")
+    public EmployeeEntity UpadateData(@RequestBody EmployeeEntity emp,@PathVariable("id") int id){
+        this.collectionOfEmployee. updateData(emp,id);
+        return emp;
+    }
 }
