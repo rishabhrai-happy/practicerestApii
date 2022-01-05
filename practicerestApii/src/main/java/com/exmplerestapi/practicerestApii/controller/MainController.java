@@ -1,7 +1,8 @@
-package com.exmplerestapi.practicerestApii;
+package com.exmplerestapi.practicerestApii.controller;
 
+import com.exmplerestapi.practicerestApii.collectionOfEmployee.CollectionOfEmployee;
+import com.exmplerestapi.practicerestApii.employeeEntity.EmployeeEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

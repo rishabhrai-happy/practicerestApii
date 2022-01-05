@@ -1,6 +1,15 @@
-package com.exmplerestapi.practicerestApii;
+package com.exmplerestapi.practicerestApii.employeeEntity;
 
+
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="employeedata")
 public class EmployeeEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int employeeId;
     private String employeeName;
     private String degignation;
