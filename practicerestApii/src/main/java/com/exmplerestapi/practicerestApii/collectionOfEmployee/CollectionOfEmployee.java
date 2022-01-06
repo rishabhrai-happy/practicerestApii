@@ -19,12 +19,17 @@ public class CollectionOfEmployee {
     }
     //get employee data by id
     public EmployeeEntity getEmployeeById(int id){
-        return this.employeeRepo.getById(id);
-
+        EmployeeEntity employee=null;
+        try {
+            employee = this.employeeRepo.findById(id);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return employee;
     }
     //post the employee data
-    public void addEmployee(EmployeeEntity employee){
-      employeeRepo.save(employee);
+    public EmployeeEntity addEmployee(EmployeeEntity employee){
+      return employeeRepo.save(employee);
 
 
     }
@@ -33,7 +38,8 @@ public class CollectionOfEmployee {
       employeeRepo.deleteById(id);
     }
     //update the data
-    public void updateData(EmployeeEntity emp,int id){
-        employeeRepo.save(emp);
+    public EmployeeEntity updateData(EmployeeEntity emp,int id){
+
+        return employeeRepo.save(emp);
     }
 }
